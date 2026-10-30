@@ -68,7 +68,6 @@ SECAPI GFXVertex4_* GFXVertex4_new();
 SECAPI GFXVertex4_* GFXVertex4_clone(const GFXVertex4_* p);
 SECAPI void GFXVertex4_delete(GFXVertex4_* p);
 SECAPI void GFXVertex4_copy(GFXVertex4_* a, const GFXVertex4_* b);
-SECAPI BOOL GFXVertex4_equal(const GFXVertex4_* a, const GFXVertex4_* b);
 SECAPI FLOAT* GFXVertex4_x(GFXVertex4_* p);
 SECAPI FLOAT* GFXVertex4_y(GFXVertex4_* p);
 SECAPI FLOAT* GFXVertex4_z(GFXVertex4_* p);

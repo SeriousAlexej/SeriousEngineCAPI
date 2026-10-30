@@ -99,7 +99,7 @@ void CImageInfo_ExpandEdges(CImageInfo_* p, INDEX passes)
 
 static INDEX sehCImageInfo_GetGfxFileInfo_t(CImageInfo_* p, const CTFileName_* f)
 {
-  INDEX res;
+  INDEX res = 0;
   SECAPI_TRY
   res = ((CImageInfo*)p)->GetGfxFileInfo_t(*((const CTFileName*)f));
   SECAPI_CATCH
