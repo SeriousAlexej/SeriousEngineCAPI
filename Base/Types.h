@@ -464,8 +464,17 @@ member_type* baseclass##_##member_var(baseclass##_* p, INDEX i) \
 
 #endif
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 SECAPI BOOL HasException();
 SECAPI char* GrabException();
+
+#ifdef __cplusplus
+}
+#endif
+
 void SetException(char* s);
 
 #define SECAPI_TRY\

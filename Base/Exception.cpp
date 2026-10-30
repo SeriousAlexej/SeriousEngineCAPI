@@ -31,7 +31,7 @@ char* GrabException()
 
 void SetException(char* s)
 {
-  const size_t len = max(256, strlen(s));
+  const size_t len = min(256, strlen(s));
   memcpy(g_exceptionBuffer, s, len);
   g_exceptionBuffer[len] = '\0';
   g_hasException = true;
