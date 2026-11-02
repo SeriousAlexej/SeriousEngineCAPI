@@ -325,9 +325,17 @@ void CWorld_UpdateSectorsDuringVertexChange(CWorld_* p, CBrushVertexSelection_* 
   ((CWorld*)p)->UpdateSectorsDuringVertexChange(*((CBrushVertexSelection*)selVertex));
 }
 
+static void sehCWorld_TriangularizeForVertices(CWorld_* p, CBrushVertexSelection_* selVertex)
+{
+  SECAPI_TRY
+  ((CWorld*)p)->TriangularizeForVertices(*((CBrushVertexSelection*)selVertex));
+  SECAPI_CATCH
+}
 void CWorld_TriangularizeForVertices(CWorld_* p, CBrushVertexSelection_* selVertex)
 {
-  ((CWorld*)p)->TriangularizeForVertices(*((CBrushVertexSelection*)selVertex));
+  STREAM_TRY
+  sehCWorld_TriangularizeForVertices(p, selVertex);
+  STREAM_CATCH
 }
 
 static void sehCWorld_CSGAdd(CWorld_* p, CEntity_* enThis, CWorld_* woOther, CEntity_* enOther, const CPlacement3D_* plOther)
