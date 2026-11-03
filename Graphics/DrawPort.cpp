@@ -202,6 +202,36 @@ ULONG* CDrawPort_dp_ulBlendingA(CDrawPort_* p)
   return &(d.dp_ulBlendingA);
 }
 
+void CDrawPort_SetOrtho(const CDrawPort_* p)
+{
+  const CDrawPort& d = *((const CDrawPort*)p);
+  d.SetOrtho();
+}
+
+void CDrawPort_SetProjection(const CDrawPort_* p, CAnyProjection3D_* apr)
+{
+  const CDrawPort& d = *((const CDrawPort*)p);
+  d.SetProjection(*((CAnyProjection3D*)apr));
+}
+
+void CDrawPort_MakeWideScreen(CDrawPort_* a, CDrawPort_* b)
+{
+  CDrawPort& d = *((CDrawPort*)a);
+  d.MakeWideScreen((CDrawPort*)b);
+}
+
+BOOL CDrawPort_IsDualHead(CDrawPort_* p)
+{
+  CDrawPort& d = *((CDrawPort*)p);
+  return d.IsDualHead();
+}
+
+BOOL CDrawPort_IsWideScreen(CDrawPort_* p)
+{
+  CDrawPort& d = *((CDrawPort*)p);
+  return d.IsWideScreen();
+}
+
 ULONG CDrawPort_GetID(CDrawPort_* p)
 {
   CDrawPort& d = *((CDrawPort*)p);
