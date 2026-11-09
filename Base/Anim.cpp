@@ -62,7 +62,9 @@ COneAnim_* COneAnim_new()
 
 COneAnim_* COneAnim_clone(const COneAnim_* p)
 {
-  return (COneAnim_*)(new COneAnim(*((const COneAnim*)p)));
+  COneAnim* pNew = new COneAnim();
+  *pNew = *((const COneAnim*)p);
+  return (COneAnim_*)pNew;
 }
 
 void COneAnim_delete(COneAnim_* p)
@@ -107,11 +109,6 @@ CAnimData_* CAnimData_new()
 void CAnimData_delete(CAnimData_* p)
 {
   delete ((CAnimData*)p);
-}
-
-void CAnimData_copy(CAnimData_* a, const CAnimData_* b)
-{
-  *((CAnimData*)a) = *((const CAnimData*)b);
 }
 
 INDEX* CAnimData_ad_NumberOfAnims(CAnimData_* p)

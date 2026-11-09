@@ -46,6 +46,9 @@ public:
     }
     return *this;
   }
+private:
+  COneAnim(const COneAnim&);
+public:
   NAME oa_Name;
   TIME oa_SecsPerFrame;
   INDEX oa_NumberOfFrames;

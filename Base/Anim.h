@@ -45,7 +45,6 @@ SECAPI INDEX** COneAnim_oa_FrameIndices(COneAnim_* p);
 
 SECAPI CAnimData_* CAnimData_new();
 SECAPI void CAnimData_delete(CAnimData_* p);
-SECAPI void CAnimData_copy(CAnimData_* a, const CAnimData_* b);
 SECAPI INDEX* CAnimData_ad_NumberOfAnims(CAnimData_* p);
 SECAPI COneAnim_* CAnimData_ad_Anims(CAnimData_* p, INDEX i);
 SECAPI void CAnimData_CreateAnimations(CAnimData_* p, INDEX ct, CTString_* s, INDEX defframe, TIME speed);
