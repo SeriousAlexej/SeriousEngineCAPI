@@ -15,26 +15,51 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 
 #include "ErrorReporting.h"
 
+// The SDK functions interpret their first argument as a printf-style format, so
+// the consumer text is escaped ('%' -> '%%') and passed with no varargs.
+static char* EscapeFormat(const char* strText)
+{
+  INDEX ctLen = (INDEX)strlen(strText);
+  char* strEscaped = new char[2 * ctLen + 1];
+  char* pOut = strEscaped;
+  for (const char* p = strText; *p != 0; p++)
+  {
+    if (*p == '%')
+      *pOut++ = '%';
+    *pOut++ = *p;
+  }
+  *pOut++ = 0;
+  return strEscaped;
+}
+
 void ThrowF_t_(char* error)
 {
+  char* strEscaped = EscapeFormat(error);
   SECAPI_TRY
-  ThrowF_t(error);
+  ThrowF_t(strEscaped);
   SECAPI_CATCH
+  delete[] strEscaped;
 }
 
 void FatalError_(const char* error)
 {
-  FatalError(error);
+  char* strEscaped = EscapeFormat(error);
+  FatalError(strEscaped);
+  delete[] strEscaped; // unreached - FatalError terminates the process
 }
 
 void WarningMessage_(const char* error)
 {
-  WarningMessage(error);
+  char* strEscaped = EscapeFormat(error);
+  WarningMessage(strEscaped);
+  delete[] strEscaped;
 }
 
 void InfoMessage_(const char* error)
 {
-  InfoMessage(error);
+  char* strEscaped = EscapeFormat(error);
+  InfoMessage(strEscaped);
+  delete[] strEscaped;
 }
 
 CTString_* GetWindowsError_(DWORD error)
