@@ -213,11 +213,6 @@ ModelPolygon_* ModelPolygon_new()
   return (ModelPolygon_*)(new ModelPolygon());
 }
 
-ModelPolygon_* ModelPolygon_clone(const ModelPolygon_* p)
-{
-  return (ModelPolygon_*)(new ModelPolygon(*((const ModelPolygon*)p)));
-}
-
 void ModelPolygon_delete(ModelPolygon_* p)
 {
   delete ((ModelPolygon*)p);
@@ -295,11 +290,6 @@ void ModelPolygon_Write_t(ModelPolygon_* p, CTStream_* s)
 MappingSurface_* MappingSurface_new()
 {
   return (MappingSurface_*)(new MappingSurface());
-}
-
-MappingSurface_* MappingSurface_clone(const MappingSurface_* p)
-{
-  return (MappingSurface_*)(new MappingSurface(*((const MappingSurface*)p)));
 }
 
 void MappingSurface_delete(MappingSurface_* p)
@@ -478,11 +468,6 @@ void MappingSurface_WriteSettings_t(MappingSurface_* p, CTStream_* s)
 PolygonsPerPatch_* PolygonsPerPatch_new()
 {
   return (PolygonsPerPatch_*)(new PolygonsPerPatch());
-}
-
-PolygonsPerPatch_* PolygonsPerPatch_clone(const PolygonsPerPatch_* p)
-{
-  return (PolygonsPerPatch_*)(new PolygonsPerPatch(*((const PolygonsPerPatch*)p)));
 }
 
 void PolygonsPerPatch_delete(PolygonsPerPatch_* p)

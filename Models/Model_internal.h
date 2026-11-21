@@ -138,7 +138,6 @@ SECAPI void ModelPolygonVertex_Read_t(ModelPolygonVertex_* p, CTStream_* s);
 SECAPI void ModelPolygonVertex_Write_t(ModelPolygonVertex_* p, CTStream_* s);
 
 SECAPI ModelPolygon_* ModelPolygon_new();
-SECAPI ModelPolygon_* ModelPolygon_clone(const ModelPolygon_* p);
 SECAPI void ModelPolygon_delete(ModelPolygon_* p);
 SECAPI void ModelPolygon_copy(ModelPolygon_* a, const ModelPolygon_* b);
 SECAPI CStaticArray_ModelPolygonVertex_* ModelPolygon_mp_PolygonVertices(ModelPolygon_* p);
@@ -151,7 +150,6 @@ SECAPI void ModelPolygon_Read_t(ModelPolygon_* p, CTStream_* s);
 SECAPI void ModelPolygon_Write_t(ModelPolygon_* p, CTStream_* s);
 
 SECAPI MappingSurface_* MappingSurface_new();
-SECAPI MappingSurface_* MappingSurface_clone(const MappingSurface_* p);
 SECAPI void MappingSurface_delete(MappingSurface_* p);
 SECAPI void MappingSurface_copy(MappingSurface_* a, const MappingSurface_* b);
 SECAPI BOOL MappingSurface_equal(const MappingSurface_* a, const MappingSurface_* b);
@@ -178,7 +176,6 @@ SECAPI void MappingSurface_ReadSettings_t(MappingSurface_* p, CTStream_* s);
 SECAPI void MappingSurface_WriteSettings_t(MappingSurface_* p, CTStream_* s);
 
 SECAPI PolygonsPerPatch_* PolygonsPerPatch_new();
-SECAPI PolygonsPerPatch_* PolygonsPerPatch_clone(const PolygonsPerPatch_* p);
 SECAPI void PolygonsPerPatch_delete(PolygonsPerPatch_* p);
 SECAPI void PolygonsPerPatch_copy(PolygonsPerPatch_* a, const PolygonsPerPatch_* b);
 SECAPI CStaticArray_INDEX_* PolygonsPerPatch_ppp_iPolygons(PolygonsPerPatch_* p);

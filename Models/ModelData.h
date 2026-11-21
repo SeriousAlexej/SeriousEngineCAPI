@@ -22,9 +22,7 @@ extern "C" {
 #endif
 
 SECAPI CModelPatch_* CModelPatch_new();
-SECAPI CModelPatch_* CModelPatch_clone(const CModelPatch_* p);
 SECAPI void CModelPatch_delete(CModelPatch_* p);
-SECAPI void CModelPatch_copy(CModelPatch_* a, const CModelPatch_* b);
 SECAPI CTString_* CModelPatch_mp_strName(CModelPatch_* p);
 SECAPI CTextureObject_* CModelPatch_mp_toTexture(CModelPatch_* p);
 SECAPI MEX2D_* CModelPatch_mp_mexPosition(CModelPatch_* p);
@@ -33,7 +31,6 @@ SECAPI void CModelPatch_Read_t(CModelPatch_* p, CTStream_* s);
 SECAPI void CModelPatch_Write_t(CModelPatch_* p, CTStream_* s);
 
 SECAPI ModelMipInfo_* ModelMipInfo_new();
-SECAPI ModelMipInfo_* ModelMipInfo_clone(const ModelMipInfo_* p);
 SECAPI void ModelMipInfo_delete(ModelMipInfo_* p);
 SECAPI void ModelMipInfo_copy(ModelMipInfo_* a, const ModelMipInfo_* b);
 SECAPI INDEX* ModelMipInfo_mmpi_PolygonsCt(ModelMipInfo_* p);
@@ -98,6 +95,9 @@ SECAPI ULONG CModelData_GetFlags(CModelData_* p);
 SECAPI void CModelData_Clear(CModelData_* p);
 SECAPI void CModelData_ClearAnimations(CModelData_* p);
 SECAPI void CModelData_LinkDataForSurfaces(CModelData_* p, BOOL bFirstMip);
+// The created COneAnim elements are raw; the consumer must initialize every
+// field, incl. allocating a frame-index array per anim (oa_FrameIndices),
+// before CModelData_ClearAnimations()/CModelData_delete() frees the block.
 SECAPI void CModelData_CreateAnimationsRaw(CModelData_* p, INDEX ct);
 
 #ifdef __cplusplus

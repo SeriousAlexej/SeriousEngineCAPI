@@ -21,19 +21,9 @@ CModelPatch_* CModelPatch_new()
   return (CModelPatch_*)(new CModelPatch());
 }
 
-CModelPatch_* CModelPatch_clone(const CModelPatch_* p)
-{
-  return (CModelPatch_*)(new CModelPatch(*((const CModelPatch*)p)));
-}
-
 void CModelPatch_delete(CModelPatch_* p)
 {
   delete ((CModelPatch*)p);
-}
-
-void CModelPatch_copy(CModelPatch_* a, const CModelPatch_* b)
-{
-  *((CModelPatch*)a) = *((const CModelPatch*)b);
 }
 
 CTString_* CModelPatch_mp_strName(CModelPatch_* p)
@@ -92,11 +82,6 @@ void CModelPatch_Write_t(CModelPatch_* p, CTStream_* s)
 ModelMipInfo_* ModelMipInfo_new()
 {
   return (ModelMipInfo_*)(new ModelMipInfo());
-}
-
-ModelMipInfo_* ModelMipInfo_clone(const ModelMipInfo_* p)
-{
-  return (ModelMipInfo_*)(new ModelMipInfo(*((const ModelMipInfo*)p)));
 }
 
 void ModelMipInfo_delete(ModelMipInfo_* p)

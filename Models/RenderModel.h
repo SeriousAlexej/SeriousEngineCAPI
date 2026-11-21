@@ -69,7 +69,6 @@ SECAPI void EndModelRenderingMask_();
 #endif
 
 SECAPI CRenderModel_* CRenderModel_new();
-SECAPI CRenderModel_* CRenderModel_clone(const CRenderModel_* p);
 SECAPI void CRenderModel_delete(CRenderModel_* p);
 SECAPI void CRenderModel_copy(CRenderModel_* a, const CRenderModel_* b);
 SECAPI FLOAT3D_* CRenderModel_rm_vObjectPosition(CRenderModel_* p);

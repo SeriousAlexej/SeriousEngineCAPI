@@ -232,11 +232,6 @@ CRenderModel_* CRenderModel_new()
   return (CRenderModel_*)(new CRenderModel());
 }
 
-CRenderModel_* CRenderModel_clone(const CRenderModel_* p)
-{
-  return (CRenderModel_*)(new CRenderModel(*((const CRenderModel*)p)));
-}
-
 void CRenderModel_delete(CRenderModel_* p)
 {
   delete ((CRenderModel*)p);

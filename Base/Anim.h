@@ -34,10 +34,6 @@ SECAPI char* CAnimInfo_ai_AnimName(CAnimInfo_* p);
 SECAPI TIME* CAnimInfo_ai_SecsPerFrame(CAnimInfo_* p);
 SECAPI INDEX* CAnimInfo_ai_NumberOfFrames(CAnimInfo_* p);
 
-SECAPI COneAnim_* COneAnim_new();
-SECAPI COneAnim_* COneAnim_clone(const COneAnim_* p);
-SECAPI void COneAnim_delete(COneAnim_* p);
-SECAPI void COneAnim_copy(COneAnim_* a, const COneAnim_* b);
 SECAPI char* COneAnim_oa_Name(COneAnim_* p);
 SECAPI TIME* COneAnim_oa_SecsPerFrame(COneAnim_* p);
 SECAPI INDEX* COneAnim_oa_NumberOfFrames(COneAnim_* p);

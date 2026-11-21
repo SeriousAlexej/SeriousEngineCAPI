@@ -22,9 +22,7 @@ extern "C" {
 #endif
 
 SECAPI CModelObject_* CModelObject_new();
-SECAPI CModelObject_* CModelObject_clone(const CModelObject_* p);
 SECAPI void CModelObject_delete(CModelObject_* p);
-SECAPI void CModelObject_copy(CModelObject_* a, const CModelObject_* b);
 SECAPI CTextureObject_* CModelObject_mo_toTexture(CModelObject_* p);
 SECAPI CTextureObject_* CModelObject_mo_toReflection(CModelObject_* p);
 SECAPI CTextureObject_* CModelObject_mo_toSpecular(CModelObject_* p);
@@ -109,10 +107,6 @@ SECAPI CModelData_* CModelObject_GetData(CModelObject_* p);
 SECAPI void CModelObject_Synchronize(CModelObject_* p, CModelObject_* moOther);
 SECAPI SLONG CModelObject_GetUsedMemory(CModelObject_* p);
 
-SECAPI CAttachmentModelObject_* CAttachmentModelObject_new();
-SECAPI CAttachmentModelObject_* CAttachmentModelObject_clone(const CAttachmentModelObject_* p);
-SECAPI void CAttachmentModelObject_delete(CAttachmentModelObject_* p);
-SECAPI void CAttachmentModelObject_copy(CAttachmentModelObject_* a, const CAttachmentModelObject_* b);
 SECAPI CListNode_* CAttachmentModelObject_amo_lnInMain(CAttachmentModelObject_* p);
 SECAPI INDEX* CAttachmentModelObject_amo_iAttachedPosition(CAttachmentModelObject_* p);
 SECAPI CPlacement3D_* CAttachmentModelObject_amo_plRelative(CAttachmentModelObject_* p);

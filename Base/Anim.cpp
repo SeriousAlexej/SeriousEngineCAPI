@@ -54,29 +54,6 @@ INDEX* CAnimInfo_ai_NumberOfFrames(CAnimInfo_* p)
   return &(a.ai_NumberOfFrames);
 }
 
-
-COneAnim_* COneAnim_new()
-{
-  return (COneAnim_*)(new COneAnim());
-}
-
-COneAnim_* COneAnim_clone(const COneAnim_* p)
-{
-  COneAnim* pNew = new COneAnim();
-  *pNew = *((const COneAnim*)p);
-  return (COneAnim_*)pNew;
-}
-
-void COneAnim_delete(COneAnim_* p)
-{
-  delete ((COneAnim*)p);
-}
-
-void COneAnim_copy(COneAnim_* a, const COneAnim_* b)
-{
-  *((COneAnim*)a) = *((const COneAnim*)b);
-}
-
 char* COneAnim_oa_Name(COneAnim_* p)
 {
   COneAnim& a = *((COneAnim*)p);

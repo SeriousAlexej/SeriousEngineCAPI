@@ -20,19 +20,9 @@ CModelObject_* CModelObject_new()
   return (CModelObject_*)(new CModelObject());
 }
 
-CModelObject_* CModelObject_clone(const CModelObject_* p)
-{
-  return (CModelObject_*)(new CModelObject(*((const CModelObject*)p)));
-}
-
 void CModelObject_delete(CModelObject_* p)
 {
   delete ((CModelObject*)p);
-}
-
-void CModelObject_copy(CModelObject_* a, const CModelObject_* b)
-{
-  *((CModelObject*)a) = *((const CModelObject*)b);
 }
 
 CTextureObject_* CModelObject_mo_toTexture(CModelObject_* p)
@@ -506,26 +496,6 @@ void CModelObject_Synchronize(CModelObject_* p, CModelObject_* moOther)
 SLONG CModelObject_GetUsedMemory(CModelObject_* p)
 {
   return ((CModelObject*)p)->GetUsedMemory();
-}
-
-CAttachmentModelObject_* CAttachmentModelObject_new()
-{
-  return (CAttachmentModelObject_*)(new CAttachmentModelObject());
-}
-
-CAttachmentModelObject_* CAttachmentModelObject_clone(const CAttachmentModelObject_* p)
-{
-  return (CAttachmentModelObject_*)(new CAttachmentModelObject(*((const CAttachmentModelObject*)p)));
-}
-
-void CAttachmentModelObject_delete(CAttachmentModelObject_* p)
-{
-  delete ((CAttachmentModelObject*)p);
-}
-
-void CAttachmentModelObject_copy(CAttachmentModelObject_* a, const CAttachmentModelObject_* b)
-{
-  *((CAttachmentModelObject*)a) = *((const CAttachmentModelObject*)b);
 }
 
 CListNode_* CAttachmentModelObject_amo_lnInMain(CAttachmentModelObject_* p)
