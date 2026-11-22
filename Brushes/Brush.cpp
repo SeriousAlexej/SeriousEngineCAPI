@@ -268,20 +268,11 @@ CBrushPolygonTexture_* CBrushPolygonTexture_new()
   return (CBrushPolygonTexture_*)(new CBrushPolygonTexture());
 }
 
-CBrushPolygonTexture_* CBrushPolygonTexture_clone(const CBrushPolygonTexture_* p)
-{
-  return (CBrushPolygonTexture_*)(new CBrushPolygonTexture(*((const CBrushPolygonTexture*)p)));
-}
-
 void CBrushPolygonTexture_delete(CBrushPolygonTexture_* p)
 {
   delete ((CBrushPolygonTexture*)p);
 }
 
-void CBrushPolygonTexture_copy(CBrushPolygonTexture_* a, const CBrushPolygonTexture_* b)
-{
-  *((CBrushPolygonTexture*)a) = *((const CBrushPolygonTexture*)b);
-}
 void CBrushPolygonTexture_CopyTextureProperties(CBrushPolygonTexture_* p, CBrushPolygonTexture_* o, BOOL bCopyMapping)
 {
   ((CBrushPolygonTexture*)p)->CopyTextureProperties(*((CBrushPolygonTexture*)o), bCopyMapping);
@@ -403,19 +394,9 @@ CBrushPolygon_* CBrushPolygon_new()
   return (CBrushPolygon_*)(new CBrushPolygon());
 }
 
-CBrushPolygon_* CBrushPolygon_clone(const CBrushPolygon_* p)
-{
-  return (CBrushPolygon_*)(new CBrushPolygon(*((const CBrushPolygon*)p)));
-}
-
 void CBrushPolygon_delete(CBrushPolygon_* p)
 {
   delete ((CBrushPolygon*)p);
-}
-
-void CBrushPolygon_copy(CBrushPolygon_* a, const CBrushPolygon_* b)
-{
-  *((CBrushPolygon*)a) = *((const CBrushPolygon*)b);
 }
 
 void CBrushPolygon_InitializeShadowMap(CBrushPolygon_* p)

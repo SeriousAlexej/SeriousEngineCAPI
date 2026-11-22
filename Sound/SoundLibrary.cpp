@@ -17,7 +17,7 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 
 SoundFormat_ _pSound_SetFormat_(SoundFormat_ EsfNew, BOOL bReport)
 {
-  SoundFormat_ res;
+  SoundFormat_ res = SF_NONE_;
   STREAM_TRY
   res = (SoundFormat_)(_pSound->SetFormat((CSoundLibrary::SoundFormat)EsfNew, bReport));
   STREAM_CATCH

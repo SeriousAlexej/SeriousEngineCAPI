@@ -82,9 +82,7 @@ SECAPI MEMBER_VAL_DECL(CBrushShadowMap, CListHead_, bsm_lhLayers)
 #endif
 
 SECAPI CBrushPolygonTexture_* CBrushPolygonTexture_new();
-SECAPI CBrushPolygonTexture_* CBrushPolygonTexture_clone(const CBrushPolygonTexture_* p);
 SECAPI void CBrushPolygonTexture_delete(CBrushPolygonTexture_* p);
-SECAPI void CBrushPolygonTexture_copy(CBrushPolygonTexture_* a, const CBrushPolygonTexture_* b);
 SECAPI void CBrushPolygonTexture_CopyTextureProperties(CBrushPolygonTexture_* p, CBrushPolygonTexture_* o, BOOL bCopyMapping);
 SECAPI void CBrushPolygonTexture_Clear(CBrushPolygonTexture_* p);
 SECAPI CTextureObject_* CBrushPolygonTexture_bpt_toTexture(CBrushPolygonTexture_* p);
@@ -143,9 +141,7 @@ SECAPI SBYTE* CBrushPolygonProperties_bpp_sbShadowClusterSize(CBrushPolygonPrope
 SECAPI UWORD* CBrushPolygonProperties_bpp_uwPretenderDistance(CBrushPolygonProperties_* p);
 
 SECAPI CBrushPolygon_* CBrushPolygon_new();
-SECAPI CBrushPolygon_* CBrushPolygon_clone(const CBrushPolygon_* p);
 SECAPI void CBrushPolygon_delete(CBrushPolygon_* p);
-SECAPI void CBrushPolygon_copy(CBrushPolygon_* a, const CBrushPolygon_* b);
 SECAPI void CBrushPolygon_InitializeShadowMap(CBrushPolygon_* p);
 SECAPI void CBrushPolygon_CopyProperties(CBrushPolygon_* p, CBrushPolygon_* o, BOOL bCopyMapping);
 SECAPI void CBrushPolygon_CopyPropertiesWithoutTexture(CBrushPolygon_* p, CBrushPolygon_* o);
