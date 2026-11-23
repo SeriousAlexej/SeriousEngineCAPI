@@ -22,8 +22,8 @@ extern "C" {
 #endif
 
 SECAPI CModelData_* _pModelStock_Obtain_t_(const CTFileName_* f);
-SECAPI void _pModelStock_Release(CModelData_* p);
-SECAPI void _pModelStock_FreeUnused();
+SECAPI void _pModelStock_Release_(CModelData_* p);
+SECAPI void _pModelStock_FreeUnused_();
 
 #ifdef __cplusplus
 }

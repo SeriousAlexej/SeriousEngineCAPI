@@ -41,7 +41,7 @@ static void seh_pAnimStock_Release(CAnimData_* p)
   SECAPI_CATCH
 }
 
-void _pAnimStock_Release(CAnimData_* p)
+void _pAnimStock_Release_(CAnimData_* p)
 {
   STREAM_TRY
   seh_pAnimStock_Release(p);
@@ -55,7 +55,7 @@ static void seh_pAnimStock_FreeUnused()
   SECAPI_CATCH
 }
 
-void _pAnimStock_FreeUnused()
+void _pAnimStock_FreeUnused_()
 {
   STREAM_TRY
   seh_pAnimStock_FreeUnused();

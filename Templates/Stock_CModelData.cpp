@@ -41,7 +41,7 @@ static void seh_pModelStock_Release(CModelData_* p)
   SECAPI_CATCH
 }
 
-void _pModelStock_Release(CModelData_* p)
+void _pModelStock_Release_(CModelData_* p)
 {
   STREAM_TRY
   seh_pModelStock_Release(p);
@@ -55,7 +55,7 @@ static void seh_pModelStock_FreeUnused()
   SECAPI_CATCH
 }
 
-void _pModelStock_FreeUnused()
+void _pModelStock_FreeUnused_()
 {
   STREAM_TRY
   seh_pModelStock_FreeUnused();

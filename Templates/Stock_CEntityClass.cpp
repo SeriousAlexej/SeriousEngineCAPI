@@ -55,7 +55,7 @@ static void seh_pEntityClassStock_FreeUnused()
   SECAPI_CATCH
 }
 
-void _pEntityClassStock_FreeUnused()
+void _pEntityClassStock_FreeUnused_()
 {
   STREAM_TRY
   seh_pEntityClassStock_FreeUnused();

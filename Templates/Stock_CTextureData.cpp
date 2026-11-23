@@ -41,7 +41,7 @@ static void seh_pTextureStock_Release(CTextureData_* p)
   SECAPI_CATCH
 }
 
-void _pTextureStock_Release(CTextureData_* p)
+void _pTextureStock_Release_(CTextureData_* p)
 {
   STREAM_TRY
   seh_pTextureStock_Release(p);
@@ -55,7 +55,7 @@ static void seh_pTextureStock_FreeUnused()
   SECAPI_CATCH
 }
 
-void _pTextureStock_FreeUnused()
+void _pTextureStock_FreeUnused_()
 {
   STREAM_TRY
   seh_pTextureStock_FreeUnused();

@@ -22,8 +22,8 @@ extern "C" {
 #endif
 
 SECAPI CSoundData_* _pSoundStock_Obtain_t_(const CTFileName_* f);
-SECAPI void _pSoundStock_Release(CSoundData_* p);
-SECAPI void _pSoundStock_FreeUnused();
+SECAPI void _pSoundStock_Release_(CSoundData_* p);
+SECAPI void _pSoundStock_FreeUnused_();
 
 #ifdef __cplusplus
 }

@@ -22,8 +22,8 @@ extern "C" {
 #endif
 
 SECAPI CAnimData_* _pAnimStock_Obtain_t_(const CTFileName_* f);
-SECAPI void _pAnimStock_Release(CAnimData_* p);
-SECAPI void _pAnimStock_FreeUnused();
+SECAPI void _pAnimStock_Release_(CAnimData_* p);
+SECAPI void _pAnimStock_FreeUnused_();
 
 #ifdef __cplusplus
 }

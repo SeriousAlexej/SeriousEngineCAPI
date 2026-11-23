@@ -23,7 +23,7 @@ extern "C" {
 
 SECAPI CEntityClass_* _pEntityClassStock_Obtain_t_(const CTFileName_* f);
 SECAPI void _pEntityClassStock_Release_(CEntityClass_* p);
-SECAPI void _pEntityClassStock_FreeUnused();
+SECAPI void _pEntityClassStock_FreeUnused_();
 
 #ifdef __cplusplus
 }

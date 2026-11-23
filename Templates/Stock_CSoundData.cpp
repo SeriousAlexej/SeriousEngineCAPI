@@ -41,7 +41,7 @@ static void seh_pSoundStock_Release(CSoundData_* p)
   SECAPI_CATCH
 }
 
-void _pSoundStock_Release(CSoundData_* p)
+void _pSoundStock_Release_(CSoundData_* p)
 {
   STREAM_TRY
   seh_pSoundStock_Release(p);
@@ -55,7 +55,7 @@ static void seh_pSoundStock_FreeUnused()
   SECAPI_CATCH
 }
 
-void _pSoundStock_FreeUnused()
+void _pSoundStock_FreeUnused_()
 {
   STREAM_TRY
   seh_pSoundStock_FreeUnused();

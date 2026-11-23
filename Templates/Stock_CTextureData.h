@@ -22,8 +22,8 @@ extern "C" {
 #endif
 
 SECAPI CTextureData_* _pTextureStock_Obtain_t_(const CTFileName_* f);
-SECAPI void _pTextureStock_Release(CTextureData_* p);
-SECAPI void _pTextureStock_FreeUnused();
+SECAPI void _pTextureStock_Release_(CTextureData_* p);
+SECAPI void _pTextureStock_FreeUnused_();
 
 #ifdef __cplusplus
 }
