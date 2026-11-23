@@ -21,11 +21,6 @@ TileLayer_* TileLayer_new()
   return (TileLayer_*)(new TileLayer());
 }
 
-TileLayer_* TileLayer_clone(const TileLayer_* p)
-{
-  return (TileLayer_*)(new TileLayer(*((const TileLayer*)p)));
-}
-
 void TileLayer_delete(TileLayer_* p)
 {
   delete ((TileLayer*)p);
@@ -63,11 +58,6 @@ CStaticStackArray_GFXVertex4_* TileLayer_tl_avVertices(TileLayer_* p)
 TileArrays_* TileArrays_new()
 {
   return (TileArrays_*)(new TileArrays());
-}
-
-TileArrays_* TileArrays_clone(const TileArrays_* p)
-{
-  return (TileArrays_*)(new TileArrays(*((const TileArrays*)p)));
 }
 
 void TileArrays_delete(TileArrays_* p)
@@ -127,19 +117,9 @@ CArrayHolder_* CArrayHolder_new()
   return (CArrayHolder_*)(new CArrayHolder());
 }
 
-CArrayHolder_* CArrayHolder_clone(const CArrayHolder_* p)
-{
-  return (CArrayHolder_*)(new CArrayHolder(*((const CArrayHolder*)p)));
-}
-
 void CArrayHolder_delete(CArrayHolder_* p)
 {
   delete ((CArrayHolder*)p);
-}
-
-void CArrayHolder_copy(CArrayHolder_* a, const CArrayHolder_* b)
-{
-  *((CArrayHolder*)a) = *((const CArrayHolder*)b);
 }
 
 INDEX CArrayHolder_GetNewArrays(CArrayHolder_* p)

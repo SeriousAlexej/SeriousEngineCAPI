@@ -315,14 +315,30 @@ void CWorld_Write_t(CWorld_* p, CTStream_* postrm)
   STREAM_CATCH
 }
 
+static void sehCWorld_UpdateSectorsAfterVertexChange(CWorld_* p, CBrushVertexSelection_* selVertex)
+{
+  SECAPI_TRY
+  ((CWorld*)p)->UpdateSectorsAfterVertexChange(*((CBrushVertexSelection*)selVertex));
+  SECAPI_CATCH
+}
 void CWorld_UpdateSectorsAfterVertexChange(CWorld_* p, CBrushVertexSelection_* selVertex)
 {
-  ((CWorld*)p)->UpdateSectorsAfterVertexChange(*((CBrushVertexSelection*)selVertex));
+  STREAM_TRY
+  sehCWorld_UpdateSectorsAfterVertexChange(p, selVertex);
+  STREAM_CATCH
 }
 
+static void sehCWorld_UpdateSectorsDuringVertexChange(CWorld_* p, CBrushVertexSelection_* selVertex)
+{
+  SECAPI_TRY
+  ((CWorld*)p)->UpdateSectorsDuringVertexChange(*((CBrushVertexSelection*)selVertex));
+  SECAPI_CATCH
+}
 void CWorld_UpdateSectorsDuringVertexChange(CWorld_* p, CBrushVertexSelection_* selVertex)
 {
-  ((CWorld*)p)->UpdateSectorsDuringVertexChange(*((CBrushVertexSelection*)selVertex));
+  STREAM_TRY
+  sehCWorld_UpdateSectorsDuringVertexChange(p, selVertex);
+  STREAM_CATCH
 }
 
 static void sehCWorld_TriangularizeForVertices(CWorld_* p, CBrushVertexSelection_* selVertex)
