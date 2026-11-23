@@ -34,12 +34,30 @@ CModelData_* _pModelStock_Obtain_t_(const CTFileName_* f)
   return res;
 }
 
+static void seh_pModelStock_Release(CModelData_* p)
+{
+  SECAPI_TRY
+  _pModelStock->Release((CModelData*)p);
+  SECAPI_CATCH
+}
+
 void _pModelStock_Release(CModelData_* p)
 {
-  _pModelStock->Release((CModelData*)p);
+  STREAM_TRY
+  seh_pModelStock_Release(p);
+  STREAM_CATCH
+}
+
+static void seh_pModelStock_FreeUnused()
+{
+  SECAPI_TRY
+  _pModelStock->FreeUnused();
+  SECAPI_CATCH
 }
 
 void _pModelStock_FreeUnused()
 {
-  _pModelStock->FreeUnused();
+  STREAM_TRY
+  seh_pModelStock_FreeUnused();
+  STREAM_CATCH
 }

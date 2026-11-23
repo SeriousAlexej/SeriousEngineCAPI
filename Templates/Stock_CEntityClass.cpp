@@ -48,7 +48,16 @@ void _pEntityClassStock_Release_(CEntityClass_* p)
   STREAM_CATCH
 }
 
+static void seh_pEntityClassStock_FreeUnused()
+{
+  SECAPI_TRY
+  _pEntityClassStock->FreeUnused();
+  SECAPI_CATCH
+}
+
 void _pEntityClassStock_FreeUnused()
 {
-  _pEntityClassStock->FreeUnused();
+  STREAM_TRY
+  seh_pEntityClassStock_FreeUnused();
+  STREAM_CATCH
 }

@@ -34,12 +34,30 @@ CTextureData_* _pTextureStock_Obtain_t_(const CTFileName_* f)
   return res;
 }
 
+static void seh_pTextureStock_Release(CTextureData_* p)
+{
+  SECAPI_TRY
+  _pTextureStock->Release((CTextureData*)p);
+  SECAPI_CATCH
+}
+
 void _pTextureStock_Release(CTextureData_* p)
 {
-  _pTextureStock->Release((CTextureData*)p);
+  STREAM_TRY
+  seh_pTextureStock_Release(p);
+  STREAM_CATCH
+}
+
+static void seh_pTextureStock_FreeUnused()
+{
+  SECAPI_TRY
+  _pTextureStock->FreeUnused();
+  SECAPI_CATCH
 }
 
 void _pTextureStock_FreeUnused()
 {
-  _pTextureStock->FreeUnused();
+  STREAM_TRY
+  seh_pTextureStock_FreeUnused();
+  STREAM_CATCH
 }

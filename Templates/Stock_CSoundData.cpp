@@ -34,12 +34,30 @@ CSoundData_* _pSoundStock_Obtain_t_(const CTFileName_* f)
   return res;
 }
 
+static void seh_pSoundStock_Release(CSoundData_* p)
+{
+  SECAPI_TRY
+  _pSoundStock->Release((CSoundData*)p);
+  SECAPI_CATCH
+}
+
 void _pSoundStock_Release(CSoundData_* p)
 {
-  _pSoundStock->Release((CSoundData*)p);
+  STREAM_TRY
+  seh_pSoundStock_Release(p);
+  STREAM_CATCH
+}
+
+static void seh_pSoundStock_FreeUnused()
+{
+  SECAPI_TRY
+  _pSoundStock->FreeUnused();
+  SECAPI_CATCH
 }
 
 void _pSoundStock_FreeUnused()
 {
-  _pSoundStock->FreeUnused();
+  STREAM_TRY
+  seh_pSoundStock_FreeUnused();
+  STREAM_CATCH
 }

@@ -108,7 +108,7 @@ static INDEX sehCImageInfo_GetGfxFileInfo_t(CImageInfo_* p, const CTFileName_* f
 
 INDEX CImageInfo_GetGfxFileInfo_t(CImageInfo_* p, const CTFileName_* f)
 {
-  INDEX res;
+  INDEX res = 0;
   STREAM_TRY
   res = sehCImageInfo_GetGfxFileInfo_t(p, f);
   STREAM_CATCH

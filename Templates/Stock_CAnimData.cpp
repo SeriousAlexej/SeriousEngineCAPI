@@ -34,12 +34,30 @@ CAnimData_* _pAnimStock_Obtain_t_(const CTFileName_* f)
   return res;
 }
 
+static void seh_pAnimStock_Release(CAnimData_* p)
+{
+  SECAPI_TRY
+  _pAnimStock->Release((CAnimData*)p);
+  SECAPI_CATCH
+}
+
 void _pAnimStock_Release(CAnimData_* p)
 {
-  _pAnimStock->Release((CAnimData*)p);
+  STREAM_TRY
+  seh_pAnimStock_Release(p);
+  STREAM_CATCH
+}
+
+static void seh_pAnimStock_FreeUnused()
+{
+  SECAPI_TRY
+  _pAnimStock->FreeUnused();
+  SECAPI_CATCH
 }
 
 void _pAnimStock_FreeUnused()
 {
-  _pAnimStock->FreeUnused();
+  STREAM_TRY
+  seh_pAnimStock_FreeUnused();
+  STREAM_CATCH
 }
